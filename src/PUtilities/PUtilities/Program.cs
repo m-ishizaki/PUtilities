@@ -18,7 +18,7 @@ var addons = new List<IAddon>();
 }
 foreach (var file in files)
 {
-    var assembly = Assembly.LoadFile(file);
+    var assembly = Assembly.LoadFrom(file);
     var types = assembly.GetTypes().Where(type => type.GetInterfaces().Contains(typeof(IAddon)));
     foreach (var type in types)
     {
